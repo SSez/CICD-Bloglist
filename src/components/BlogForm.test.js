@@ -4,7 +4,6 @@ import { render, fireEvent } from '@testing-library/react'
 import BlogForm from './BlogForm'
 
 describe('BlogForm', () => {
-
   test('When created, the callback will be called with data entered to form', () => {
     const createBlog = jest.fn()
 
