@@ -1,33 +1,41 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+import { render, fireEvent } from '@testing-library/react'
 import BlogForm from './BlogForm'
 
-test('<BlogForm />  updates parent state and calls onSubmit', () => {
-  const createBlog = jest.fn()
-  const component = render(
-    <BlogForm createBlog={createBlog} />
-  )
+describe('BlogForm', () => {
 
-  const title = component.container.querySelector('#title')
-  const author = component.container.querySelector('#author')
-  const url = component.container.querySelector('#url')
-  const form = component.container.querySelector('form')
+  test('When created, the callback will be called with data entered to form', () => {
+    const createBlog = jest.fn()
 
-  fireEvent.change(title, {
-    target: { value: 'title test' }
+    const component = render(
+      <BlogForm createBlog={createBlog} />
+    )
+
+    const blogData = {
+      author: 'Martin Fowler',
+      title: 'Continuous Integration',
+      url: 'https://martinfowler.com/articles/continuousIntegration.html'
+    }
+
+    const author = component.container.querySelector('#author')
+    const title = component.container.querySelector('#title')
+    const url = component.container.querySelector('#url')
+    const form = component.container.querySelector('form')
+
+    fireEvent.change(author, {
+      target: { value: blogData.author }
+    })
+    fireEvent.change(title, {
+      target: { value: blogData.title }
+    })
+    fireEvent.change(url, {
+      target: { value: blogData.url }
+    })
+    fireEvent.submit(form)
+
+    expect(createBlog.mock.calls.length).toBe(1)
+
+    expect(createBlog.mock.calls[0][0]).toEqual(blogData)
   })
-  fireEvent.change(author, {
-    target: { value: 'author test' }
-  })
-  fireEvent.change(url, {
-    target: { value: 'url test' }
-  })
-  fireEvent.submit(form)
-
-  expect(createBlog.mock.calls).toHaveLength(1)
-
-  expect(createBlog.mock.calls[0][0].title).toBe('title test')
-  expect(createBlog.mock.calls[0][0].author).toBe('author test')
-  expect(createBlog.mock.calls[0][0].url).toBe('url test')
 })
