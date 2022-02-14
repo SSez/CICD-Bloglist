@@ -25,8 +25,8 @@ describe('Blogs view', () => {
   })
 
   test('renders only title and author', () => {
-    expect(component.container).toHaveTextContent('Hello world');
-    expect(component.container).toHaveTextContent('hackerman');
+    expect(component.container).toHaveTextContent('Hello world')
+    expect(component.container).toHaveTextContent('hackerman')
   })
 
   test('view button: childrens are displayed', () => {
