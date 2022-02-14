@@ -23,12 +23,6 @@ describe('Blog app', function() {
       cy.contains('admin logged in')
     })
 
-    it('fails with wrong credentials', function() {
-      cy.get('#username').type('root')
-      cy.get('#password').type('qwerty123')
-      cy.get('#login-button').click()
-      cy.contains('invalid username or password.')
-    })
   })
 
   describe('When logged in', function() {
