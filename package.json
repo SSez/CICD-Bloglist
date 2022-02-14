@@ -1,19 +1,19 @@
 {
   "name": "blogilist",
+  "author": "Sez",
+  "license": "ISC",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint ./src",
     "build": "rm -rf build && react-scripts build",
-    "start-prod": "cross-env NODE_ENV=production node index.js",
+    "start-prod": "node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run"
   },
-  "author": "Sez",
-  "license": "ISC",
   "dependencies": {
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
