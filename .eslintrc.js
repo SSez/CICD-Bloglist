@@ -1,14 +1,14 @@
 module.exports = {
+    root: true,
     "env": {
         "browser": true,
         "es6": true,
-        "jest/globals": true ,
+        "jest": true,
         "cypress/globals": true
     },
     "extends": [ 
         "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:jest/recommended"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -18,7 +18,7 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react", "jest", "cypress"
+        "react", "jest-dom", "cypress"
     ],
     "rules": {
         "indent": [
