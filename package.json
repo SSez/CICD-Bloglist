@@ -8,7 +8,7 @@
     "build": "rm -rf build && react-scripts build",
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run"
   },
@@ -72,9 +72,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "verbose": true,
-    "testEnvironment": "node"
   }
 }
