@@ -1,4 +1,5 @@
 module.exports = {
   "verbose": true,
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ["cypress/"],
 }
