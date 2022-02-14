@@ -9,31 +9,31 @@ const user = {
 }
 
 const blog = {
-    title: "Hello world",
-    author: "hackerman",
-    url: "github.com",
-    user: {
-      name: "root",
-    },
+  title: 'Hello world',
+  author: 'hackerman',
+  url: 'github.com',
+  user: {
+    name: 'root',
+  },
 }
 
-describe("Blogs view", () => {
+describe('Blogs view', () => {
   let component
   const mockHandler = jest.fn()
   beforeEach(() => {
     component = render(<Blog blog={blog} user={user} like={mockHandler}/>)
   })
 
-  test("renders only title and author", () => {
-    expect(component.container).toHaveTextContent("Hello world");
-    expect(component.container).toHaveTextContent("hackerman");
+  test('renders only title and author', () => {
+    expect(component.container).toHaveTextContent('Hello world');
+    expect(component.container).toHaveTextContent('hackerman');
   })
 
-  test("view button: childrens are displayed", () => {
-    const button = component.getByText("view")
+  test('view button: childrens are displayed', () => {
+    const button = component.getByText('view')
     fireEvent.click(button)
-    const div = component.container.querySelector(".togglableContent")
-    expect(div).not.toHaveStyle("display: none")
+    const div = component.container.querySelector('.togglableContent')
+    expect(div).not.toHaveStyle('display: none')
   })
 
   test('clicking the like button twice', () => {

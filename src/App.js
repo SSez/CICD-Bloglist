@@ -72,7 +72,6 @@ const App = () => {
       })
       setTimeout(() => { setMessage(null) }, 5000)
     } catch(exception) {
-      console.log(exception)
       setMessage({
         message: exception.response.data.error,
         type: 'error'
@@ -100,7 +99,6 @@ const App = () => {
         })
         setTimeout(() => { setMessage(null) }, 5000)
       } catch (exception) {
-        console.log(exception)
         setMessage({
           message: `Blog: ${blog.title} written by ${blog.author} couldn't be removed!`,
           type: 'error'
