@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint \"./**/*.{js}\"",
+    "eslint": "eslint ./src",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start": "node index.js",
     "build": "rm -rf build && react-scripts build",
