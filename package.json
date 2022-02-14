@@ -12,7 +12,9 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "cypress:open": "cypress open",
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run",
+    "log": "heroku logs -t -a bloglist-1337",
+    "open": "open https://bloglist-1337.herokuapp.com/"
   },
   "dependencies": {
     "@testing-library/user-event": "^12.8.3",
