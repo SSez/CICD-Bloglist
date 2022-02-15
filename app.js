@@ -34,17 +34,6 @@ app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use(express.static('build'))
-// Accessing the path module
-
-/*
-const path = require("path");
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./build")))
-// Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./build", "index.html"))
-})
-*/
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
