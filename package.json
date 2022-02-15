@@ -7,8 +7,9 @@
   "scripts": {
     "heroku-prebuild": "npm install --dev",
     "eslint": "eslint ./src",
-    "build": "rm -rf build && react-scripts build",
-    "start": "webpack serve --open --mode development",
+    "build": "webpack --mode production",
+    "start": "node index.js",
+    "dev": "webpack serve --open --mode development",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run",
