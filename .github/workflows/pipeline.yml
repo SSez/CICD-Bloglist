@@ -24,12 +24,12 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
-      #- name: e2e tests
-      #  uses: cypress-io/github-action@v2
-      #  with:
-      #    command: npm run test:e2e
-      #    #start: npm run start
-      #    #wait-on: http://localhost:3002
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:3002
       - name: Deploy to heroku
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
         uses: akhileshns/heroku-deploy@v3.12.12
