@@ -9,7 +9,7 @@
     "build": "rm -rf build && react-scripts build",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start_old": "cross-env NODE_ENV=production node index.js",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run",
